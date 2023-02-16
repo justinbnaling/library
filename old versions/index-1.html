@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="library.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        Library Header
+    </div>
+
+    <div class="main">
+
+        <div class="wrapper">
+            <h2>My Library</h2>
+            <div class="libraryElement"></div>
+        </div>
+
+        <div class="wrapper">
+            <h2>Add Book</h2>
+            <div class="addBook">
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author">
+                </div>
+
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">   
+                </div>
+
+                <div>
+                    <label for="pages">Pages:</label>
+                    <input type="text" id="pages" name="pages"> 
+                </div>
+
+                <div class="radio">
+                    <label for="read">Read:</label>
+                    <input type="radio" name="read"  value="Yes">Yes
+                    <input type="radio" name="read"  value="No">No
+                </div>
+                <div>
+                    <button id="addBook">Submit</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <button class="blurButton">blur screen</button>
+
+    <div class="bottom">
+        Library Footer
+    </div>
+
+    <script src="library.js"></script>
+</body>
+</html>
