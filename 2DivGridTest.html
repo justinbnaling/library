@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
-    <link rel="stylesheet" href="myStyle.css">
+    <title>Document</title>
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: lightgray;
+        }
+
+        app{
+        /* grid container settings */
+        display: grid;
+        /* grid-template-columns: 1fr; */
+        grid-template-rows: 150px 1fr;
+        grid-template-areas: 
+            'header'
+            'main'
+        }
+
+        header{
+            border: 5px red solid;
+        }
+
+        main{
+            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+            grid-template-rows: repeat(auto-fit, minmax(200px, 200px));
+            gap: 20px;
+            background-color: gray;
+        }
+
+        div.card{
+            height: 200px;
+            width: 200px;
+            border: 5px green solid;
+        }
+    </style>
 </head>
 <body>
     <app>
@@ -29,6 +68,7 @@
                     <button>Add Book</button>
                   </form>
             </div>    
+            
             <div class="card">
                 Title: LOTR2 <br>
                 Author: Tolkien <br>
@@ -53,8 +93,12 @@
                 Read: No <br>
                 <button>Delete</button>
             </div>    
+
+            
+           
+
+
         </main>
     </app>
-    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
