@@ -21,10 +21,10 @@ function Book(title, author, pages, read) {
     this.author = author
     this.pages = pages
     this.read = read
+    this.index = myLibrary.length
 }
 
 function clearBookDisplay(){
-    // find all cards and remove them from display
     let books = document.querySelectorAll(".card")
     books.forEach(book=>{
         console.log(book)
@@ -32,24 +32,38 @@ function clearBookDisplay(){
     })
 }
 
-// create card element and populate with books
 function displayBooks(){
-    myLibrary.forEach(book=>{
-        console.log(book)
-        // create a new div element
+    myLibrary.forEach((book, index)=>{
+        // create book element
         const bookDiv = document.createElement("div");
         bookDiv.classList.add("card");
+        bookDiv.classList.add(`${index}`);
 
-        // and give it some content
+        // add text to element
         bookDiv.innerText =  
         `Title: ${book.title}
         Author: ${book.author}
         Pages: ${book.pages}
         Read: ${book.read}
         `
-        // add the newly created element and its content into the DOM
+        // delete button element
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = `Delete Book`
+        bookDiv.appendChild(deleteButton)
+        deleteButton.addEventListener("click", deleteBook)
+
+        // add books div to main
         const target = document.querySelector("main")
         target.appendChild(bookDiv)
-
     })
+}
+
+function deleteBook(event){
+    let deleteNum = event.target.parentElement.classList
+    console.log(deleteNum[1])
+
+    myLibrary.splice(deleteNum[1], 1);
+    clearBookDisplay()
+    displayBooks()
+
 }
