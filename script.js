@@ -73,9 +73,6 @@ function deleteBook(event){
 
 function readStatus(event){
     let bookNum = event.target.parentElement.classList
-    
-    console.log(myLibrary[bookNum[1]].read)
-
     if (myLibrary[bookNum[1]].read == "Yes")
         {myLibrary[bookNum[1]].read = "No"}
     else

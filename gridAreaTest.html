@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
-    <link rel="stylesheet" href="myStyle.css">
+    <title>Document</title>
+    <style>
+        app {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template-areas:
+            "header header"
+            "aside  main";
+            grid-template-rows: 50px 1fr ;
+            grid-template-columns: 150px 1fr;
+            border: 5px red solid;
+        }
+        header {
+            grid-area: header;
+            border: 5px green solid;
+        }
+        aside{
+            grid-area: aside;
+            border: 5px green solid;
+        }
+        main {
+            grid-area: main;
+            border: 5px green solid;
+        }   
+    </style>
 </head>
 <body>
-    <app>
+    <app>    
         <header>
             Justin's Library
         </header>
         <aside>
+            add card div
+        </aside>
+        <main>
             <div id="addCard">
                 <label for="title">Title:</label><br>
                 <input type="text" id="title" name="title"><br>
@@ -26,12 +53,8 @@
                 <input type="radio" id="No" name="Read" value="No">
                 <label for="No">No</label><br>
                 <button id="addBook">Add Book</button>
-            </div>
-        </aside>
-        <main>
-    
+            </div>    
         </main>
     </app>
-    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
