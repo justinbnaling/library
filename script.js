@@ -52,6 +52,12 @@ function displayBooks(){
         bookDiv.appendChild(deleteButton)
         deleteButton.addEventListener("click", deleteBook)
 
+        // read status element
+        const readButton = document.createElement("button");
+        readButton.innerText = `Change read status`
+        bookDiv.appendChild(readButton)
+        readButton.addEventListener("click", readStatus)
+
         // add books div to main
         const target = document.querySelector("main")
         target.appendChild(bookDiv)
@@ -60,10 +66,20 @@ function displayBooks(){
 
 function deleteBook(event){
     let deleteNum = event.target.parentElement.classList
-    console.log(deleteNum[1])
-
     myLibrary.splice(deleteNum[1], 1);
     clearBookDisplay()
     displayBooks()
+}
 
+function readStatus(event){
+    let bookNum = event.target.parentElement.classList
+    
+    console.log(myLibrary[bookNum[1]].read)
+
+    if (myLibrary[bookNum[1]].read == "Yes")
+        {myLibrary[bookNum[1]].read = "No"}
+    else
+        {myLibrary[bookNum[1]].read = "Yes"}
+    clearBookDisplay()
+    displayBooks()
 }
