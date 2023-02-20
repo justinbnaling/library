@@ -8,30 +8,30 @@
     <link rel="stylesheet" href="myStyle.css">
 </head>
 <body>
-    <app>
-        <header>
-            Justin's Library
-        </header>
-        <aside>
-            <div id="addCard">
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title"><br>
-                <label for="author">Author:</label><br>
-                <input type="text" id="author" name="author">
-                <label for="pages">Pages:</label><br>
-                <input type="text" id="pages" name="pages">
-                <p>Read: </p>
-                <input type="radio" id="Yes" name="Read" value="Yes">
-                <label for="Yes">Yes</label><br>
-                <input type="radio" id="No" name="Read" value="No">
-                <label for="No">No</label><br>
-                <button id="addBook">Add Book</button>
-            </div>
-        </aside>
+    <header>
+        Justin's Library
+    </header>
+
+    <aside>
+        <div id="addCard">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author">
+            <label for="pages">Pages:</label><br>
+            <input type="text" id="pages" name="pages">
+            <p>Read: </p>
+            <input type="radio" id="Yes" name="Read" value="Yes">
+            <label for="Yes">Yes</label><br>
+            <input type="radio" id="No" name="Read" value="No">
+            <label for="No">No</label><br>
+            <button id="addBook">Add Book</button>
+        </div>
+    </aside>
         <main>
-    
+            <myGrid></myGrid>
         </main>
-    </app>
+    
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -59,7 +59,7 @@ function displayBooks(){
         readButton.addEventListener("click", readStatus)
 
         // add books div to main
-        const target = document.querySelector("main")
+        const target = document.querySelector("myGrid")
         target.appendChild(bookDiv)
     })
 }
