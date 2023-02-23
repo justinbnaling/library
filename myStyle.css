@@ -55,11 +55,11 @@ table {
 }
 
 body{
-    background-color: lightgray;
+    background-color: white;
 }
 
 header{
-    background-color: yellow;
+    background-color: #87BBA2;
     height: 100px;
     width: 100vw;
     position: fixed; 
@@ -75,7 +75,7 @@ header{
 }
 
 aside {
-    background-color: greenyellow;
+    background-color: #F0F7EE;
     height: 100vh;
     width: 200px;
     position: fixed; 
@@ -108,11 +108,24 @@ myGrid{
 div.card{
     height: 200px;
     width: 200px;
-    border: 5px green solid;
+    border: 5px #87BBA2 solid;
     padding: 10px;
     border-radius: 10px;
-
     display: flex; 
     flex-direction: column;
     justify-content: space-around;
+}
+#addBook {
+    width: 145px;
+}
+button {
+    background-color: #FFF07C;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+input {
+    background-color: #FFF07C;
 }
