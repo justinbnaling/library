@@ -14,16 +14,19 @@
 
     <aside>
         <div id="addCard">
-            <label for="title">Title:</label><br>
-            <input type="text" id="title" name="title"><br>
-            <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author">
-            <label for="pages">Pages:</label><br>
-            <input type="text" id="pages" name="pages">
-            <p>Read: </p>
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title" required /><br>
+            <label class="errorMsg" id="titleError"></label><br>
+            <label for="author">Author</label><br>
+            <input type="text" id="author" name="author"> <br>
+            <label class="errorMsg" id="authorError"></label><br>
+            <label for="pages">Pages</label><br>
+            <input type="decimal" id="pages" name="pages"> <br>
+            <label class="errorMsg" id="pagesError"></label><br>
+            <p>Read</p>
             <input type="radio" id="Yes" name="Read" value="Yes">
             <label for="Yes">Yes</label><br>
-            <input type="radio" id="No" name="Read" value="No">
+            <input type="radio" id="No" name="Read" value="No" checked>
             <label for="No">No</label><br>
             <button id="addBook">Add Book</button>
         </div>

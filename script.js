@@ -3,17 +3,22 @@ let addBookButton = document.getElementById("addBook")
 addBookButton.addEventListener("click", addBookToLibrary)
 
 function addBookToLibrary() {   
-    let title = document.getElementById("title").value;
-    let author = document.getElementById("author").value;
-    let pages = document.getElementById("pages").value;
-    let read = "No"
-    if (document.getElementById("Yes").checked){read = "Yes"}
-    let book = new Book(title, author, pages, read);
-    myLibrary.push(book);
+    let validInput = validateInputs();
 
-    clearBookDisplay()
-    displayBooks()
+    if (validInput){
+        let title = document.getElementById("title").value;
+        let author = document.getElementById("author").value;
+        let pages = document.getElementById("pages").value;
+        let read = "No"
+        if (document.getElementById("Yes").checked){read = "Yes"}
+        let book = new Book(title, author, pages, read);
+        myLibrary.push(book);
 
+
+        resetInputs();
+        clearBookDisplay();
+        displayBooks();
+    }
 }
 
 function Book(title, author, pages, read) {
@@ -79,4 +84,53 @@ function readStatus(event){
         {myLibrary[bookNum[1]].read = "Yes"}
     clearBookDisplay()
     displayBooks()
+}
+
+function validateInputs(){
+    if (document.getElementById("title").value == ""){
+        document.getElementById("title").classList.add("errorBorder")
+        document.getElementById("titleError").innerText = "Title required";
+        return false;
+    }
+
+    else {
+        document.getElementById("title").classList.remove("errorBorder")
+        document.getElementById("titleError").innerText = "";
+    }
+
+    if (document.getElementById("author").value == ""){
+        document.getElementById("author").classList.add("errorBorder")
+        document.getElementById("authorError").innerText = "Author required";
+        return false;
+    }
+
+    else {
+        document.getElementById("author").classList.remove("errorBorder")
+        document.getElementById("authorError").innerText = "";
+    }
+
+    if (document.getElementById("pages").value == ""){
+        document.getElementById("pages").classList.add("errorBorder")
+        document.getElementById("pagesError").innerText = "Pages required";
+        return false;
+    }
+
+    else {
+        document.getElementById("pages").classList.remove("errorBorder")
+        document.getElementById("pagesError").innerText = "";
+    }
+
+    if (isNaN(document.getElementById("pages").value)){
+        document.getElementById("pages").classList.add("errorBorder")
+        document.getElementById("pagesError").innerText = "Enter number";
+        return false;
+    }
+
+    return true;
+}
+
+function resetInputs(){
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("pages").value = "";
 }
